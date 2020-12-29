@@ -1,0 +1,367 @@
+# main.run
+
+# This produces the schedules and the dashboard variables for each file.
+
+###############################################################################
+
+reset;
+
+printf "#################################################################\n";
+printf "\n";
+printf "\n";
+printf "\n";
+printf "# Hello!\n";
+printf "\n";
+printf "# This program is slated to run for about 10 minutes.\n";
+printf "\n";
+printf "# If you have nothing else to do,\n";
+printf "# may we recommend a video?\n";
+printf "\n";
+printf "#   https://www.youtube.com/watch?v=oI3CCvZVxR8\n";
+printf "\n";
+printf "# ;)))\n";
+printf "\n";
+printf "\n";
+printf "\n";
+printf "#################################################################\n";
+
+reset;
+
+###############################################################################
+
+# Process data_1_sched1.dat;
+
+reset;
+option solver cplex; option cplex_options "timelimit=100";
+option display_width 1000;
+model main.mod;
+data data_1_sched1.dat;
+solve;
+
+printf "" > SCHEDULE_data_1_sched1.txt; # Clear out the file first.
+printf "" > RAW_SCHEDULE_data_1_sched1.txt; # Clear out the file first.
+printf "" > SUMMARY_data_1_sched1.txt; # Clear out the file first.
+
+printf "# This is our schedule for data_1_sched1.dat.\n";
+printf "# This is our schedule for data_1_sched1.dat.\n" >> SCHEDULE_data_1_sched1.txt;
+printf "# Second-year residents are listed before third.\n";
+printf "# Second-year residents are listed before third.\n" >> SCHEDULE_data_1_sched1.txt;
+printf "# There are three tables, one per hospital here.\n";
+printf "# Second-year residents are listed before third.\n" >> SCHEDULE_data_1_sched1.txt;
+printf "# You may find summary statistics in SUMMARY_data_1_sched1.txt.\n\n";
+printf "# You may find summary statistics in SUMMARY_data_1_sched1.txt.\n\n" >> SCHEDULE_data_1_sched1.txt;
+printf "# The raw schedule without comments is dumped into RAW_SCHEDULE_data_1_sched1.txt.\n\n";
+printf "# The raw schedule without comments is dumped into RAW_SCHEDULE_data_1_sched1.txt.\n\n" >> SCHEDULE_data_1_sched1.txt;
+
+display x_rhc;
+display x_rhc >> SCHEDULE_data_1_sched1.txt;
+display x_rhc >> RAW_SCHEDULE_data_1_sched1.txt;
+
+printf "# These are the summary statistics.\n\n";
+printf "# These are the summary statistics.\n\n" >> SUMMARY_data_1_sched1.txt;
+printf "# t_r = Total number of hours assigned\n";
+printf "# t_r = Total number of hours assigned\n" >> SUMMARY_data_1_sched1.txt;
+printf "# t_r_wk = Total number of weekend hours assigned\n";
+printf "# t_r_wk = Total number of weekend hours assigned\n" >> SUMMARY_data_1_sched1.txt;
+printf "# t_r_Fri = Total number of Friday hours assigned\n";
+printf "# t_r_Fri = Total number of Friday hours assigned\n" >> SUMMARY_data_1_sched1.txt;
+printf "# t_r_vac = Total number of vacation hours assigned\n";
+printf "# t_r_vac = Total number of vacation hours assigned\n" >> SUMMARY_data_1_sched1.txt;
+printf "# t_r_hol = Total number of federal holiday hours assigned\n\n";
+printf "# t_r_hol = Total number of federal holiday hours assigned\n\n" >> SUMMARY_data_1_sched1.txt;
+
+display t_r, t_r_wk, t_r_Fri, t_r_vac, t_r_hol;
+display t_r, t_r_wk, t_r_Fri, t_r_vac, t_r_hol >> SUMMARY_data_1_sched1.txt;
+
+printf "# Cost of EOCs for the year:\n\n";
+printf "# Cost of EOCs for the year:\n\n" >> SUMMARY_data_1_sched1.txt;
+display C_EOCs;
+display C_EOCs >> SUMMARY_data_1_sched1.txt;
+
+
+###############################################################################
+
+# Process data_1_sched2.dat;
+
+reset;
+option solver cplex; option cplex_options "timelimit=100";
+option display_width 1000;
+model main.mod;
+data data_1_sched2.dat;
+solve;
+
+printf "" > SCHEDULE_data_1_sched2.txt; # Clear out the file first.
+printf "" > RAW_SCHEDULE_data_1_sched2.txt; # Clear out the file first.
+printf "" > SUMMARY_data_1_sched2.txt; # Clear out the file first.
+
+printf "# This is our schedule for data_1_sched2.dat.\n";
+printf "# This is our schedule for data_1_sched2.dat.\n" >> SCHEDULE_data_1_sched2.txt;
+printf "# Second-year residents are listed before third.\n";
+printf "# Second-year residents are listed before third.\n" >> SCHEDULE_data_1_sched2.txt;
+printf "# There are three tables, one per hospital here.\n";
+printf "# Second-year residents are listed before third.\n" >> SCHEDULE_data_1_sched2.txt;
+printf "# You may find summary statistics in SUMMARY_data_1_sched2.txt.\n\n";
+printf "# You may find summary statistics in SUMMARY_data_1_sched2.txt.\n\n" >> SCHEDULE_data_1_sched2.txt;
+printf "# The raw schedule without comments is dumped into RAW_SCHEDULE_data_1_sched2.txt.\n\n";
+printf "# The raw schedule without comments is dumped into RAW_SCHEDULE_data_1_sched2.txt.\n\n" >> SCHEDULE_data_1_sched2.txt;
+
+display x_rhc;
+display x_rhc >> SCHEDULE_data_1_sched2.txt;
+display x_rhc >> RAW_SCHEDULE_data_1_sched2.txt;
+
+printf "# These are the summary statistics.\n\n";
+printf "# These are the summary statistics.\n\n" >> SUMMARY_data_1_sched2.txt;
+printf "# t_r = Total number of hours assigned\n";
+printf "# t_r = Total number of hours assigned\n" >> SUMMARY_data_1_sched2.txt;
+printf "# t_r_wk = Total number of weekend hours assigned\n";
+printf "# t_r_wk = Total number of weekend hours assigned\n" >> SUMMARY_data_1_sched2.txt;
+printf "# t_r_Fri = Total number of Friday hours assigned\n";
+printf "# t_r_Fri = Total number of Friday hours assigned\n" >> SUMMARY_data_1_sched2.txt;
+printf "# t_r_vac = Total number of vacation hours assigned\n";
+printf "# t_r_vac = Total number of vacation hours assigned\n" >> SUMMARY_data_1_sched2.txt;
+printf "# t_r_hol = Total number of federal holiday hours assigned\n\n";
+printf "# t_r_hol = Total number of federal holiday hours assigned\n\n" >> SUMMARY_data_1_sched2.txt;
+
+display t_r, t_r_wk, t_r_Fri, t_r_vac, t_r_hol;
+display t_r, t_r_wk, t_r_Fri, t_r_vac, t_r_hol >> SUMMARY_data_1_sched2.txt;
+
+printf "# Cost of EOCs for the year:\n\n";
+printf "# Cost of EOCs for the year:\n\n" >> SUMMARY_data_1_sched2.txt;
+display C_EOCs;
+display C_EOCs >> SUMMARY_data_1_sched2.txt;
+
+
+###############################################################################
+
+# Process data_2_sched1.dat;
+
+reset;
+option solver cplex; option cplex_options "timelimit=100";
+option display_width 1000;
+model main.mod;
+data data_2_sched1.dat;
+solve;
+
+printf "" > SCHEDULE_data_2_sched1.txt; # Clear out the file first.
+printf "" > RAW_SCHEDULE_data_2_sched1.txt; # Clear out the file first.
+printf "" > SUMMARY_data_2_sched1.txt; # Clear out the file first.
+
+printf "# This is our schedule for data_2_sched1.dat.\n";
+printf "# This is our schedule for data_2_sched1.dat.\n" >> SCHEDULE_data_2_sched1.txt;
+printf "# Second-year residents are listed before third.\n";
+printf "# Second-year residents are listed before third.\n" >> SCHEDULE_data_2_sched1.txt;
+printf "# There are three tables, one per hospital here.\n";
+printf "# Second-year residents are listed before third.\n" >> SCHEDULE_data_2_sched1.txt;
+printf "# You may find summary statistics in SUMMARY_data_2_sched1.txt.\n\n";
+printf "# You may find summary statistics in SUMMARY_data_2_sched1.txt.\n\n" >> SCHEDULE_data_2_sched1.txt;
+printf "# The raw schedule without comments is dumped into RAW_SCHEDULE_data_2_sched1.txt.\n\n";
+printf "# The raw schedule without comments is dumped into RAW_SCHEDULE_data_2_sched1.txt.\n\n" >> SCHEDULE_data_2_sched1.txt;
+
+display x_rhc;
+display x_rhc >> SCHEDULE_data_2_sched1.txt;
+display x_rhc >> RAW_SCHEDULE_data_2_sched1.txt;
+
+printf "# These are the summary statistics.\n\n";
+printf "# These are the summary statistics.\n\n" >> SUMMARY_data_2_sched1.txt;
+printf "# t_r = Total number of hours assigned\n";
+printf "# t_r = Total number of hours assigned\n" >> SUMMARY_data_2_sched1.txt;
+printf "# t_r_wk = Total number of weekend hours assigned\n";
+printf "# t_r_wk = Total number of weekend hours assigned\n" >> SUMMARY_data_2_sched1.txt;
+printf "# t_r_Fri = Total number of Friday hours assigned\n";
+printf "# t_r_Fri = Total number of Friday hours assigned\n" >> SUMMARY_data_2_sched1.txt;
+printf "# t_r_vac = Total number of vacation hours assigned\n";
+printf "# t_r_vac = Total number of vacation hours assigned\n" >> SUMMARY_data_2_sched1.txt;
+printf "# t_r_hol = Total number of federal holiday hours assigned\n\n";
+printf "# t_r_hol = Total number of federal holiday hours assigned\n\n" >> SUMMARY_data_2_sched1.txt;
+
+display t_r, t_r_wk, t_r_Fri, t_r_vac, t_r_hol;
+display t_r, t_r_wk, t_r_Fri, t_r_vac, t_r_hol >> SUMMARY_data_2_sched1.txt;
+
+printf "# Cost of EOCs for the year:\n\n";
+printf "# Cost of EOCs for the year:\n\n" >> SUMMARY_data_2_sched1.txt;
+display C_EOCs;
+display C_EOCs >> SUMMARY_data_2_sched1.txt;
+
+
+###############################################################################
+
+# Process data_2_sched2.dat;
+
+reset;
+option solver cplex; option cplex_options "timelimit=100";
+option display_width 1000;
+model main.mod;
+data data_2_sched2.dat;
+solve;
+
+printf "" > SCHEDULE_data_2_sched2.txt; # Clear out the file first.
+printf "" > RAW_SCHEDULE_data_2_sched2.txt; # Clear out the file first.
+printf "" > SUMMARY_data_2_sched2.txt; # Clear out the file first.
+
+printf "# This is our schedule for data_2_sched2.dat.\n";
+printf "# This is our schedule for data_2_sched2.dat.\n" >> SCHEDULE_data_2_sched2.txt;
+printf "# Second-year residents are listed before third.\n";
+printf "# Second-year residents are listed before third.\n" >> SCHEDULE_data_2_sched2.txt;
+printf "# There are three tables, one per hospital here.\n";
+printf "# Second-year residents are listed before third.\n" >> SCHEDULE_data_2_sched2.txt;
+printf "# You may find summary statistics in SUMMARY_data_2_sched2.txt.\n\n";
+printf "# You may find summary statistics in SUMMARY_data_2_sched2.txt.\n\n" >> SCHEDULE_data_2_sched2.txt;
+printf "# The raw schedule without comments is dumped into RAW_SCHEDULE_data_2_sched2.txt.\n\n";
+printf "# The raw schedule without comments is dumped into RAW_SCHEDULE_data_2_sched2.txt.\n\n" >> SCHEDULE_data_2_sched2.txt;
+
+display x_rhc;
+display x_rhc >> SCHEDULE_data_2_sched2.txt;
+display x_rhc >> RAW_SCHEDULE_data_2_sched2.txt;
+
+printf "# These are the summary statistics.\n\n";
+printf "# These are the summary statistics.\n\n" >> SUMMARY_data_2_sched2.txt;
+printf "# t_r = Total number of hours assigned\n";
+printf "# t_r = Total number of hours assigned\n" >> SUMMARY_data_2_sched2.txt;
+printf "# t_r_wk = Total number of weekend hours assigned\n";
+printf "# t_r_wk = Total number of weekend hours assigned\n" >> SUMMARY_data_2_sched2.txt;
+printf "# t_r_Fri = Total number of Friday hours assigned\n";
+printf "# t_r_Fri = Total number of Friday hours assigned\n" >> SUMMARY_data_2_sched2.txt;
+printf "# t_r_vac = Total number of vacation hours assigned\n";
+printf "# t_r_vac = Total number of vacation hours assigned\n" >> SUMMARY_data_2_sched2.txt;
+printf "# t_r_hol = Total number of federal holiday hours assigned\n\n";
+printf "# t_r_hol = Total number of federal holiday hours assigned\n\n" >> SUMMARY_data_2_sched2.txt;
+
+display t_r, t_r_wk, t_r_Fri, t_r_vac, t_r_hol;
+display t_r, t_r_wk, t_r_Fri, t_r_vac, t_r_hol >> SUMMARY_data_2_sched2.txt;
+
+printf "# Cost of EOCs for the year:\n\n";
+printf "# Cost of EOCs for the year:\n\n" >> SUMMARY_data_2_sched2.txt;
+display C_EOCs;
+display C_EOCs >> SUMMARY_data_2_sched2.txt;
+
+
+###############################################################################
+
+# Process data_3_sched1.dat;
+
+reset;
+option solver cplex; option cplex_options "timelimit=100";
+option display_width 1000;
+model main.mod;
+data data_3_sched1.dat;
+solve;
+
+printf "" > SCHEDULE_data_3_sched1.txt; # Clear out the file first.
+printf "" > RAW_SCHEDULE_data_3_sched1.txt; # Clear out the file first.
+printf "" > SUMMARY_data_3_sched1.txt; # Clear out the file first.
+
+printf "# This is our schedule for data_3_sched1.dat.\n";
+printf "# This is our schedule for data_3_sched1.dat.\n" >> SCHEDULE_data_3_sched1.txt;
+printf "# Second-year residents are listed before third.\n";
+printf "# Second-year residents are listed before third.\n" >> SCHEDULE_data_3_sched1.txt;
+printf "# There are three tables, one per hospital here.\n";
+printf "# Second-year residents are listed before third.\n" >> SCHEDULE_data_3_sched1.txt;
+printf "# You may find summary statistics in SUMMARY_data_3_sched1.txt.\n\n";
+printf "# You may find summary statistics in SUMMARY_data_3_sched1.txt.\n\n" >> SCHEDULE_data_3_sched1.txt;
+printf "# The raw schedule without comments is dumped into RAW_SCHEDULE_data_3_sched1.txt.\n\n";
+printf "# The raw schedule without comments is dumped into RAW_SCHEDULE_data_3_sched1.txt.\n\n" >> SCHEDULE_data_3_sched1.txt;
+
+display x_rhc;
+display x_rhc >> SCHEDULE_data_3_sched1.txt;
+display x_rhc >> RAW_SCHEDULE_data_3_sched1.txt;
+
+printf "# These are the summary statistics.\n\n";
+printf "# These are the summary statistics.\n\n" >> SUMMARY_data_3_sched1.txt;
+printf "# t_r = Total number of hours assigned\n";
+printf "# t_r = Total number of hours assigned\n" >> SUMMARY_data_3_sched1.txt;
+printf "# t_r_wk = Total number of weekend hours assigned\n";
+printf "# t_r_wk = Total number of weekend hours assigned\n" >> SUMMARY_data_3_sched1.txt;
+printf "# t_r_Fri = Total number of Friday hours assigned\n";
+printf "# t_r_Fri = Total number of Friday hours assigned\n" >> SUMMARY_data_3_sched1.txt;
+printf "# t_r_vac = Total number of vacation hours assigned\n";
+printf "# t_r_vac = Total number of vacation hours assigned\n" >> SUMMARY_data_3_sched1.txt;
+printf "# t_r_hol = Total number of federal holiday hours assigned\n\n";
+printf "# t_r_hol = Total number of federal holiday hours assigned\n\n" >> SUMMARY_data_3_sched1.txt;
+
+display t_r, t_r_wk, t_r_Fri, t_r_vac, t_r_hol;
+display t_r, t_r_wk, t_r_Fri, t_r_vac, t_r_hol >> SUMMARY_data_3_sched1.txt;
+
+printf "# Cost of EOCs for the year:\n\n";
+printf "# Cost of EOCs for the year:\n\n" >> SUMMARY_data_3_sched1.txt;
+display C_EOCs;
+display C_EOCs >> SUMMARY_data_3_sched1.txt;
+
+
+###############################################################################
+
+# Process data_3_sched2.dat;
+
+reset;
+option solver cplex; option cplex_options "timelimit=100";
+option display_width 1000;
+model main.mod;
+data data_3_sched2.dat;
+solve;
+
+printf "" > SCHEDULE_data_3_sched2.txt; # Clear out the file first.
+printf "" > RAW_SCHEDULE_data_3_sched2.txt; # Clear out the file first.
+printf "" > SUMMARY_data_3_sched2.txt; # Clear out the file first.
+
+printf "# This is our schedule for data_3_sched2.dat.\n";
+printf "# This is our schedule for data_3_sched2.dat.\n" >> SCHEDULE_data_3_sched2.txt;
+printf "# Second-year residents are listed before third.\n";
+printf "# Second-year residents are listed before third.\n" >> SCHEDULE_data_3_sched2.txt;
+printf "# There are three tables, one per hospital here.\n";
+printf "# Second-year residents are listed before third.\n" >> SCHEDULE_data_3_sched2.txt;
+printf "# You may find summary statistics in SUMMARY_data_3_sched2.txt.\n\n";
+printf "# You may find summary statistics in SUMMARY_data_3_sched2.txt.\n\n" >> SCHEDULE_data_3_sched2.txt;
+printf "# The raw schedule without comments is dumped into RAW_SCHEDULE_data_3_sched2.txt.\n\n";
+printf "# The raw schedule without comments is dumped into RAW_SCHEDULE_data_3_sched2.txt.\n\n" >> SCHEDULE_data_3_sched2.txt;
+
+display x_rhc;
+display x_rhc >> SCHEDULE_data_3_sched2.txt;
+display x_rhc >> RAW_SCHEDULE_data_3_sched2.txt;
+
+printf "# These are the summary statistics.\n\n";
+printf "# These are the summary statistics.\n\n" >> SUMMARY_data_3_sched2.txt;
+printf "# t_r = Total number of hours assigned\n";
+printf "# t_r = Total number of hours assigned\n" >> SUMMARY_data_3_sched2.txt;
+printf "# t_r_wk = Total number of weekend hours assigned\n";
+printf "# t_r_wk = Total number of weekend hours assigned\n" >> SUMMARY_data_3_sched2.txt;
+printf "# t_r_Fri = Total number of Friday hours assigned\n";
+printf "# t_r_Fri = Total number of Friday hours assigned\n" >> SUMMARY_data_3_sched2.txt;
+printf "# t_r_vac = Total number of vacation hours assigned\n";
+printf "# t_r_vac = Total number of vacation hours assigned\n" >> SUMMARY_data_3_sched2.txt;
+printf "# t_r_hol = Total number of federal holiday hours assigned\n\n";
+printf "# t_r_hol = Total number of federal holiday hours assigned\n\n" >> SUMMARY_data_3_sched2.txt;
+
+display t_r, t_r_wk, t_r_Fri, t_r_vac, t_r_hol;
+display t_r, t_r_wk, t_r_Fri, t_r_vac, t_r_hol >> SUMMARY_data_3_sched2.txt;
+
+printf "# Cost of EOCs for the year:\n\n";
+printf "# Cost of EOCs for the year:\n\n" >> SUMMARY_data_3_sched2.txt;
+display C_EOCs;
+display C_EOCs >> SUMMARY_data_3_sched2.txt;
+
+
+
+###############################################################################
+
+reset;
+
+printf "#################################################################\n";
+printf "\n";
+printf "\n";
+printf "\n";
+printf "# Thank you for waiting patiently.\n";
+printf "\n";
+printf "# The program has now concluded. You should find .txt files\n";
+printf "# for RAW_SCHEDULE, SCHEDULE, and SUMMARY in your directory.\n";
+printf "\n";
+printf "# What are you going to do now?\n";
+printf "# Maybe call your mom and tell her you much you love her!\n";
+printf "# Maybe call your mom and tell her you much you love *us*!!\n";
+printf "\n";
+printf "# ;)))))\n";
+printf "\n";
+printf "\n";
+printf "\n";
+printf "#################################################################\n";
+
+reset;
+

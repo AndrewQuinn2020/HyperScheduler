@@ -1,0 +1,29 @@
+# These are the summary statistics.
+
+# t_r = Total number of hours assigned
+# t_r_wk = Total number of weekend hours assigned
+# t_r_Fri = Total number of Friday hours assigned
+# t_r_vac = Total number of vacation hours assigned
+# t_r_hol = Total number of federal holiday hours assigned
+
+:     t_r  t_r_wk t_r_Fri t_r_vac t_r_hol    :=
+1      705   210     105      0      15
+2      705   210     105      0      30
+3      705   210     105      0      30
+4      705   210     105      0      30
+5      705   210     105      0      30
+6      705   210     105      0      30
+7      705   210     105      0      30
+8      705   210     105      0      15
+9      825   240     105      0      30
+10     825   240     120      0      15
+11     825   240     120      0      30
+12     825   240     120      0      15
+13     825   240     120      0      30
+EOC   1170     .      .       .       .
+;
+
+# Cost of EOCs for the year:
+
+C_EOCs = 93600
+

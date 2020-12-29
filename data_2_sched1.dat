@@ -1,0 +1,58 @@
+# data_2_sched1.dat
+
+##########################################################################################
+
+# Weighting constants.
+
+# Make this higher to reduce the highest number of total hours over minimum residency
+# requirements any resident r is assigned.
+param c_1 = 16700; 
+
+# Make this higher to reduce the highest number of total weekend hours over residential
+# preference any resident r is assigned.
+param c_2 = 67;
+
+# Make this higher to reduce the highest number of total Friday hours over residential
+# preference any resident r is assigned.
+param c_3 = 16700;
+
+# Make this higher to reduce the highest number of total vacation hours any resident
+# r is assigned work on.
+param c_4 = 20;
+
+# Make this higher to reduce the number of holiday hours above or below what is desired
+# any resident r is assigned.
+param c_5 = 16700;
+
+# Make this higher to make the average amount of vacation hours every resident gets
+# closer together.
+param c_6 = 1.2;
+
+# Make this higher to cause the EOC to be scheduled in for fewer hours.
+param c_7 = 0.01;
+
+##########################################################################################
+
+# Schedule data.
+
+set R_star = "EOC" 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16;
+set R = 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16;
+set R_2 = 1 2 3 4 5 6 7 8 9 10 11 12 13;
+set R_3 = 14 15 16;
+
+set V_r_raw[1] = 1 57 136;                         
+set V_r_raw[2] = 320 184 185 52;               
+set V_r_raw[3] = 177 178 179 180 181 182 183 184 185 186 187 188 189 97;              
+set V_r_raw[4] = 176 177 178 179 180 181 182 183 184 185 186 187 190;              
+set V_r_raw[5] = 173 174 175 176 177 178 179 180 181 182 183 184 185 186;              
+set V_r_raw[6] = 186 187 188 189 175 176 177 178 179 97;                   
+set V_r_raw[7] = 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216;
+set V_r_raw[8] = 325 162 267;          
+set V_r_raw[9] = 164 146 147 148 149 150 151 152 153 154 155;
+set V_r_raw[10] = 89 147 148 149 150 151 152 153 154 155 156 157 158 226;  
+set V_r_raw[11] = 83 144 145 146 147 148 149 150 151 152 153 154 356;                  
+set V_r_raw[12] = 65 81 218;                            
+set V_r_raw[13] = 62 66 67 68 69 70 71 72;                       
+set V_r_raw[14] = 177 178 179 180 181 182 183 184 185 186 187 188 189 97 98 99 100;              
+set V_r_raw[15] = 176 177 178 179 180 181 182 183 184 185 186 187 111 190;;                 
+set V_r_raw[16] = 173 174 175 176 177 178 179 180 181 182 183 184 185 186 170;              
